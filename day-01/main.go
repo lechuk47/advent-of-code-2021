@@ -36,11 +36,15 @@ func CountIncrements(input []int64) int {
 func CountIncrementsExtended(input []int64) int {
 	increments := 0
 	for i := 0; i < len(input)-3; i++ {
-		a := input[i] + input[i+1] + input[i+2]
-		b := input[i+1] + input[i+2] + input[i+3]
+		a := input[i]
+		b := input[i+3]
+		// No need to sum all values, input[i+1] and input[i+2] are common
+		// a := input[i] + input[i+1] + input[i+2]
+		// b := input[i+1] + input[i+2] + input[i+3]
 		if b > a {
 			increments++
 		}
+
 	}
 	return increments
 }
