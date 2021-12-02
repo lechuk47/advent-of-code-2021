@@ -72,7 +72,7 @@ func main() {
 		fmt.Println(err)
 		os.Exit(1)
 	}
-	p := position{hpos: 0, depth: 0}
+	p := position{hpos: 0, depth: 0, aim: 0}
 
 	for _, line := range input {
 		action, value := ParseAction(line)
