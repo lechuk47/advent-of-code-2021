@@ -1,12 +1,13 @@
 package main
 
 import (
-	"bufio"
 	"fmt"
 	"os"
 	"reflect"
 	"strconv"
 	"strings"
+
+	"github.com/lechuk47/advent-of-code-2021/input"
 )
 
 type position struct {
@@ -50,24 +51,9 @@ func CallAction(position *position, action string, value int64) {
 	f.Call(f_params)
 }
 
-func ReadInput(path string) ([]string, error) {
-	file, err := os.Open(path)
-	if err != nil {
-		return nil, err
-	}
-	defer file.Close()
-	lines := []string{}
-	scanner := bufio.NewScanner(file)
-	for scanner.Scan() {
-		line := scanner.Text()
-		lines = append(lines, line)
-	}
-	return lines, scanner.Err()
-}
-
 func main() {
 	//input := []string{"forward 5", "down 5", "forward 8", "up 3", "down 8", "forward 2"}
-	input, err := ReadInput("input.txt")
+	input, err := input.ReadFile("input.txt")
 	if err != nil {
 		fmt.Println(err)
 		os.Exit(1)
