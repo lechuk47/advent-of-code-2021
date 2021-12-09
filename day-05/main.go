@@ -154,5 +154,5 @@ func main() {
 	m.GenerateMatrix()
 	//m.PrintMatrix()
 	overlapping := m.CountOverlapping()
-	fmt.Println("Overlaps: ", overlapping)
+	fmt.Println("Overlapping: ", overlapping)
 }
